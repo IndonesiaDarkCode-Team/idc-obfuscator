@@ -1,20 +1,2 @@
-import base64
-import os
-import sys
-print ("contoh file.php")
-code = ""
-try:
-		file = raw_input("Nama File yang mau di Obfuscate : ")
-		code = open(file,"r").read()
-except I0Error :
-	print ("[!] FILE TIDAK ADA!!!")
-	sys.exit()
-rep = str(code).replace ("<?php","").replace ("?>","")
-enc = base64.b64encode(rep)
-data = """<?php
-//   Coded by: cyruxxsec -  OBFUSCATED BY IndonesiaDarkCode
-// site: idc-team.com 
-eval(base64_decode('%s'));
-?>"""%(enc)
-out = raw_input("OUT : ")
-open(out,"w").write(data)
+import base64 
+exec(base64.b64decode("aW1wb3J0IGJhc2U2NA0KaW1wb3J0IG9zDQppbXBvcnQgc3lzDQpwcmludCAoImNvbnRvaCBmaWxlLnBocCIpDQpjb2RlID0gIiINCnRyeToNCgkJZmlsZSA9IHJhd19pbnB1dCgiTmFtYSBGaWxlIHlhbmcgbWF1IGRpIE9iZnVzY2F0ZSA6ICIpDQoJCWNvZGUgPSBvcGVuKGZpbGUsInIiKS5yZWFkKCkNCmV4Y2VwdCBJMEVycm9yIDoNCglwcmludCAoIlshXSBGSUxFIFRJREFLIEFEQSEhISIpDQoJc3lzLmV4aXQoKQ0KcmVwID0gc3RyKGNvZGUpLnJlcGxhY2UgKCI8P3BocCIsIiIpLnJlcGxhY2UgKCI/PiIsIiIpDQplbmMgPSBiYXNlNjQuYjY0ZW5jb2RlKHJlcCkNCmRhdGEgPSAiIiI8P3BocA0KLy8gICBDb2RlZCBieTogY3lydXh4c2VjIC0gIE9CRlVTQ0FURUQgQlkgSW5kb25lc2lhRGFya0NvZGUNCi8vIHNpdGU6IGlkYy10ZWFtLmNvbSANCmV2YWwoYmFzZTY0X2RlY29kZSgnJXMnKSk7DQo/PiIiIiUoZW5jKQ0Kb3V0ID0gcmF3X2lucHV0KCJPVVQgOiAiKQ0Kb3BlbihvdXQsInciKS53cml0ZShkYXRhKQ0K"))
